@@ -12,7 +12,7 @@ The SSH Server service start is changed to automatic then SSH server is accessib
 
 ##### Usage:
 
-enable-ssh-server.ps1 "<place key string here>" -Port 2345
+enable-ssh-server.ps1 "&lt;place SSH Key string here&gt;" -Port 2345
 
 ##### Parameters:
 
