@@ -122,12 +122,12 @@ if ( $PSBoundParameters.ContainsKey('Port') ){
 }
 
 $authorizedKeyFilePath = “$env:ProgramData\ssh\administrators_authorized_keys”
-$file_exists = Test-Path -Path $authorizedKeyFilePath -PathType Leaf
+$file_exists = Test-Path -Path $authorizedKeyFilePath -PathType Leaf 
 if ($file_exists -eq $False ){
-    New-Item $authorizedKeyFilePath
+    New-Item $authorizedKeyFilePath > $null
 
-    icacls.exe $authorizedKeyFilePath /remove “NT AUTHORITY\Authenticated Users”
-    icacls.exe $authorizedKeyFilePath /inheritance:r 
+    icacls.exe $authorizedKeyFilePath /remove “NT AUTHORITY\Authenticated Users” > $null
+    icacls.exe $authorizedKeyFilePath /inheritance:r > $null
     Get-Acl “$env:ProgramData\ssh\ssh_host_dsa_key” | Set-Acl $authorizedKeyFilePath
 }
 
@@ -140,4 +140,6 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "$env:
 $SSHDaemonSvc = Get-Service -Name ‘sshd’
 Set-Service -Name $SSHDaemonSvc.Name -StartupType Automatic
 Start-Service -Name $SSHDaemonSvc.Name
+
+Write-Host "`r`nThe OpenSSH server is successfully installed and configured" -ForegroundColor Green
 
