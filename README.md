@@ -3,6 +3,12 @@
 Some useful PS Scripts to make life easier:
 
 * **enable-ssh-server.ps1** -- _Installs and enable SSH server with Public Key Authentization on Windows host_
+
+### Hint:
+To bypass Power Shell policy, you can use this trick from PowerShell console:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_PowerShell.exe -ExecutionPolicy Bypass -File script_to_run.ps1_
+
 -------------------------------------------------
 **enable-ssh-server**
 
