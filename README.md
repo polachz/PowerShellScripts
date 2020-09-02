@@ -2,7 +2,7 @@
 
 Some useful PS Scripts to make life easier:
 
-* **Deploy Script to create new wsl instance** --  _enable-ssh-server.ps1_
+* **enable-ssh-server.ps1** -- _Installs and enable SSH server with Public Key Authentization_
 -------------------------------------------------
 **enable-ssh-server**
 
