@@ -9,9 +9,6 @@ To bypass Power Shell policy, you can use this trick from PowerShell console:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_PowerShell.exe -ExecutionPolicy Bypass -File script_to_run.ps1_
 
-To remove ssh key from known hosts to allow connect after VM redeploy or SSH server reinstall:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_ssh-keygen -R example.com_
 
 -------------------------------------------------
 **enable-ssh-server**
@@ -28,3 +25,9 @@ enable-ssh-server.ps1 "&lt;place SSH Key string here&gt;" -Port 2345
 
 * **SSHKey** (Mandatory) - The SSH Key (as string) to be used for authentication
 * **Port** - Port where the SSH server will listen for connections. This port will be also enabled at the Windows Firewall and previously used port will be blocked by the Firewall.
+
+##### Hint:
+
+To remove ssh key from known hosts to allow connect after VM redeploy or SSH server reinstall:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_ssh-keygen -R example.com_
