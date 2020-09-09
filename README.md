@@ -9,6 +9,10 @@ To bypass Power Shell policy, you can use this trick from PowerShell console:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_PowerShell.exe -ExecutionPolicy Bypass -File script_to_run.ps1_
 
+To remove ssh key from known hosts to allow connect after VM redeploy or SSH server reinstall:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_ssh-keygen -R example.com_
+
 -------------------------------------------------
 **enable-ssh-server**
 
